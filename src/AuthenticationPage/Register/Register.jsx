@@ -58,27 +58,27 @@ const Register = () => {
                     <h2 className="text-4xl text-center my-6 uppercase font-extrabold">Register Here</h2>
 
                     <label className="label">
-                        <span className="label-text text-xl font-extrabold">Name</span>
+                        <span className="label-text text-xl font-extrabold"></span>
                     </label>
-                    <input type="name" name="name" placeholder="Name" className="input input-bordered" required />
+                    <input type="name" name="name" placeholder="Name" className="input rounded-full input-bordered" required />
 
                     <label className="label mt-3">
-                        <span className="label-text text-xl font-extrabold">Email</span>
+                        <span className="label-text text-xl font-extrabold"></span>
                     </label>
-                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                    <input type="email" name="email" placeholder="Email" className="input rounded-full input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label mt-3">
-                        <span className="label-text text-xl font-extrabold">Password</span>
+                        <span className="label-text text-xl font-extrabold"></span>
                     </label>
-                    <input type="password" placeholder="Password" name="password" className="input input-bordered" required />
+                    <input type="password" placeholder="Password" name="password" className="input rounded-full input-bordered" required />
 
                 </div>
                 <div className="form-control mt-6 ">
-                    <button className="btn btn-secondary text-white">Register</button>
+                    <button className="btn btn-secondary rounded-full mt-3 mx-auto w-[220px] text-white">Register</button>
 
                     <div className="flex my-8 ">
-                        <p className="text-center">Have an account ? <Link to='/login'> <span className="underline font-extrabold text-secondary text-2xl">Log In</span> here</Link></p>
+                        <p className="text-center mx-auto">Already Have an account ? <Link to='/login'> <span className="underline font-extrabold text-secondary text-2xl">Log In</span> </Link></p>
 
                     </div>
                 </div>
