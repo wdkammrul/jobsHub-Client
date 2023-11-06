@@ -25,9 +25,9 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <img className="w-16 h-16 mr-4 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
+                <img className="w-12 h-12 mr-4 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
 
-                <Link to="/" className="btn btn-secondary text-white normal-case text-xl">JOBSHUB</Link>
+                <Link to="/" className="text-white normal-case text-3xl font-bold">JobsHub</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu  menu-horizontal px-1">

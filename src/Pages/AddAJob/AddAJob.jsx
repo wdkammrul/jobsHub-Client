@@ -1,9 +1,9 @@
 
 const AddAJob = () => {
     return (
-        <div className="mt-24 w-11/12 md:w-11/12 lg:w-full mx-auto bg-slate-800 p-24">
+        <div className="mt-24 rounded-lg w-11/12 md:w-11/12 lg:w-full mx-auto bg-slate-800 p-24">
 
-            <h2 className="text-3xl font-extrabold text-center mb-6">Add a Job</h2>
+            <h2 className="text-5xl font-extrabold text-center mb-6">Add A Job</h2>
 
             <form>
                 <div className="md:flex mb-6">
@@ -12,7 +12,7 @@ const AddAJob = () => {
                             <span className="label-text"></span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full" />
+                            <input type="text" name="name" placeholder="User Name" className="input input-bordered w-full rounded-full" />
                         </label>
                     </div>
                     <div className="form-control md:w-1/2 ml-4">
@@ -20,7 +20,7 @@ const AddAJob = () => {
                             <span className="label-text"></span>
                         </label>
                         <label className="input-group">
-                            <select name="brand" className="select select-error w-full border" defaultValue="">
+                            <select name="brand" className="select input-bordered w-full border" defaultValue="">
                                 <option value="" disabled>Select Category</option>
                                 <option value="remote">Remote</option>
                                 <option value="fullTime">Full Time</option>
@@ -50,6 +50,14 @@ const AddAJob = () => {
                             <input type="text" name="salaryRange" placeholder="Salary Range" className="input input-bordered w-full" />
                         </label>
                     </div>
+                    <div className="form-control ml-4 md:w-1/2">
+                        <label className="label">
+                            <span className="label-text"></span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="jobApplicatsNumber" placeholder="Job Applicaters Number" className="input input-bordered w-full" />
+                        </label>
+                    </div>
                 </div>
 
 
@@ -74,15 +82,7 @@ const AddAJob = () => {
 
 
                 <div className="md:flex mb-6">
-                    <div className="form-control md:w-1/2">
-                        <label className="label">
-                            <span className="label-text"></span>
-                        </label>
-                        <label className="input-group">
-                            <input type="text" name="jobApplicatsNumber" placeholder="Job Applicaters Number" className="input input-bordered w-full" />
-                        </label>
-                    </div>
-                    <div className="form-control md:w-1/2 ml-4">
+                    <div className="form-control w-full">
                         <label className="label">
                             <span className="label-text"></span>
                         </label>

@@ -9,6 +9,7 @@ import AllJobs from "../Pages/AllJobs/AllJobs/AllJobs";
 import SingleJobDetails from "../Pages/AllJobs/SingleJobDetails/SingleJobDetails";
 import AddAJob from "../Pages/AddAJob/AddAJob";
 import MyJobs from "../Pages/MyJobs/MyJobs";
+import SingleJobCategory from "../Pages/SingleJobCategory/SingleJobCategory";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
             {
                 path: '/myJobs',
                 element: <MyJobs></MyJobs>
+            },
+            {
+                path: '/singleJobCategory',
+                element:<SingleJobCategory></SingleJobCategory>
             },
             {
                 path: '/login',

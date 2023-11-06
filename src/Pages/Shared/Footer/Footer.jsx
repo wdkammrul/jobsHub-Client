@@ -1,29 +1,36 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Footer = () => {
     return (
         <div className="overflow-x-hidden">
             <footer className="footer  mb-10 mt-32 p-10 bg-base-200 text-base-content rounded-lg w-[400px] md:w-[740px] lg:w-full mx-auto">
-                <nav className="lg:flex justify-center items-center gap-3">
-                    <img className="w-32 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
+                <nav className="space-y-4 ">
+                    {/* <img className="w-32 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
 
-                    <Link to="/" className="btn btn-secondary text-white normal-case text-xl">JOBSHUB</Link>
+                    <Link to="/" className="btn btn-secondary text-white normal-case text-xl">JOBSHUB</Link> */}
+
+                    <div className="lg:flex justify-center items-center gap-3">
+                        <img className="w-12 h-12 mr-2 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
+
+                        <Link to="/" className="text-white normal-case text-3xl font-bold">JobsHub</Link>
+                   </div>
+
+                    <div className="flex flex-col text-xl font-bold"> 
+                        <a className="link link-hover">82, Segunbagicha, Dhaka 1000</a>
+                        <a className="link link-hover mt-4">Email: jobs@hub.com</a>
+                        <a className="link link-hover mt-4">Phone: 01710510464 </a>
+                    </div>
 
                 </nav>
 
-                <nav>
-                    <header className="footer-title">Our Address</header>
-                    <a className="link link-hover">82, Sagunbaghicha</a>
-                    <a className="link link-hover">Dhaka, Bangladesh</a>
+                <nav className="space-y-3 text-2xl font-bold">
+                    {/* <header></header> */}
+                    <NavLink to='/'>Home</NavLink>
+                    <NavLink to='/allJobs'>All Jobs</NavLink> 
+                    <NavLink to='/allJobs'>Add A Job</NavLink> 
+                    <NavLink to='/myJobs'>My Jobs</NavLink>
                 </nav>
 
-                <nav>
-                    <header className="footer-title">Contact Info</header>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
-                </nav>
 
                 <nav>
                     <header className="footer-title">Social</header>
@@ -36,7 +43,7 @@ const Footer = () => {
                 </nav>
             </footer>
         
-            <Link to="/" className="flex justify-center gap-3 text-white normal-case text-xl mb-10">Copyright © 2023 - All right reserved by <span className="btn btn-secondary">JobsHub</span></Link>
+            <Link to="/" className="flex justify-center gap-3 text-white normal-case text-xl mb-10">Copyright © 2023 - All right reserved by <span className="text-2xl font-extrabold">JobsHub</span></Link>
 
         </div>
 
