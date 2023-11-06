@@ -85,8 +85,12 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text"></span>
                         </label>
-                        <label className="input-group">
+                        {/* <label className="input-group">
                             <input type="text" name="description" placeholder="Job description" className="input checkbox-secondary input-bordered w-full" />
+                        </label> */}
+
+                        <label className="input-group">
+                            <textarea className="input checkbox-secondary input-bordered w-full" type='text' name="description" placeholder="Job description" cols="30" rows="10"></textarea>
                         </label>
                     </div>
                 </div>

@@ -87,7 +87,8 @@ const AddAJob = () => {
                             <span className="label-text"></span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="description" placeholder="Job description" className="input checkbox-secondary input-bordered w-full" />
+                            {/* <input type="text" name="description" placeholder="Job description" className="input checkbox-secondary input-bordered w-full" /> */}
+                            <textarea className="input checkbox-secondary input-bordered w-full" name="description" placeholder="Job description" id="" cols="30" rows="10"></textarea>
                         </label>
                     </div>
                 </div>
