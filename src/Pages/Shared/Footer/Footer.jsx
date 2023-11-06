@@ -5,9 +5,6 @@ const Footer = () => {
         <div className="overflow-x-hidden">
             <footer className="footer mb-10 mt-32 p-20 bg-slate-900 text-base-content rounded-lg w-[400px] md:w-[740px] lg:w-full mx-auto">
                 <nav className="space-y-4 ">
-                    {/* <img className="w-32 rounded-full" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
-
-                    <Link to="/" className="btn btn-secondary text-white normal-case text-xl">JOBSHUB</Link> */}
 
                     <div className="lg:flex justify-center items-center gap-3">
                         <img className="w-12 h-12 mr-2 rounded-full mb-4 md:mb-0" src="https://i.ibb.co/93n28NM/1517027541750.jpg" alt="" />
