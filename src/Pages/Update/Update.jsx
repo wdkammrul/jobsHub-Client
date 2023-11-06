@@ -1,9 +1,8 @@
-
-const AddAJob = () => {
+const Update = () => {
     return (
         <div className="mt-24 rounded-lg w-11/12 md:w-11/12 lg:w-full mx-auto bg-slate-700 p-24">
 
-            <h2 className="text-5xl font-extrabold text-center mb-6">Add A Job</h2>
+            <h2 className="text-5xl font-extrabold text-center mb-6">Update</h2>
 
             <form>
                 <div className="md:flex mb-6">
@@ -104,7 +103,7 @@ const AddAJob = () => {
                     </div>
                 </div>
 
-                <input className="btn btn-block btn-secondary" type="submit" value="Add A Job" />
+                <input className="btn btn-block btn-secondary" type="submit" value="Update" />
 
 
             </form>
@@ -114,4 +113,4 @@ const AddAJob = () => {
     );
 };
 
-export default AddAJob;
+export default Update;

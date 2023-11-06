@@ -10,6 +10,7 @@ import SingleJobDetails from "../Pages/AllJobs/SingleJobDetails/SingleJobDetails
 import AddAJob from "../Pages/AddAJob/AddAJob";
 import MyJobs from "../Pages/MyJobs/MyJobs";
 import SingleJobCategory from "../Pages/SingleJobCategory/SingleJobCategory";
+import Update from "../Pages/Update/Update";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/myJobs',
                 element: <MyJobs></MyJobs>
+            },
+            {
+                path: '/update',
+                element: <Update></Update>
             },
             {
                 path: '/singleJobCategory',

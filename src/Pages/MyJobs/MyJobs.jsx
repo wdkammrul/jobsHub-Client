@@ -40,7 +40,7 @@ const MyJobs = () => {
                     
 
                     <div className="flex gap-6">
-                        <Link><button
+                        <Link to='/update'><button
                             className="flex select-none  items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white transition-all bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
                         >
