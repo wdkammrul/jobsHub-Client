@@ -8,7 +8,7 @@ const SingleJobCategory = ({jobData}) => {
 
     return (
         <div className="">
-            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] bg-slate-500 text-white mx-auto md:flex-row flex-col rounded-xl md:h-[350px] bg-clip-border  shadow-md">
+            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] bg-slate-500 text-white mx-auto md:flex-row flex-col rounded-xl md:h-[355px] bg-clip-border  shadow-md">
                 <div className="relative m-0 h-[160px] md:h-0 md:w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border ">
                     <img
                         src={picture_URL || ''}
@@ -39,9 +39,9 @@ const SingleJobCategory = ({jobData}) => {
                         Job Applicants Number: {applicants_number}
                     </p>
 
-                    <div className="flex gap-6">
+                    <div className="flex gap-">
                         <Link to=''><button
-                            className="flex select-none  items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white transition-all bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            className="flex select-none  items-center gap-2 rounded-lg py-4 mt-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white transition-all bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
                         >
                             View Details 
