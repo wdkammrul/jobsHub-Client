@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 const SingleJobDetails = () => {
+
     return (
         <div className=" mt-10  w-[400px] md:w-[740px] lg:w-full mx-auto">
             <div className="bg-white rounded-lg overflow-hidden shadow-md">

@@ -1,13 +1,13 @@
 import Banner from "../Banner/Banner";
 import ContactUs from "../ContactUs/ContactUs";
-import JobByCategory from "../JobByCategory/JobByCategory";
+import JobCategory from "../JobCategory/JobCategory";
 import Subscribe from "../Subscribe/Subscribe";
 
 const Home = () => {
     return (
         <div>
            <Banner></Banner>
-           <JobByCategory></JobByCategory>
+           <JobCategory></JobCategory>
            <Subscribe></Subscribe>
            <ContactUs></ContactUs>
         </div>

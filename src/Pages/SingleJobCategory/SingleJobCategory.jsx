@@ -1,35 +1,42 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
 
-const SingleJobCategory = () => {
+const SingleJobCategory = ({jobData}) => {
+
+    const { picture_URL, username, job_title, salary_range, deadline, posting_date, applicants_number, job_type } = jobData
+
     return (
-        <div className="grid md:grid-cols-2 gap-6">
-            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] mx-auto flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
+        <div className="">
+            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] bg-white mx-auto md:flex-row flex-col rounded-xl md:h-[350px] bg-clip-border text-gray-700 shadow-md">
+                <div className="relative m-0 h-[160px] md:h-0 md:w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
                     <img
-                        src='https://i.ibb.co/cvVvTLS/kamrul1.jpg'
+                        src={picture_URL || ''}
                         className="h-full w-full object-cover"
                     />
                 </div>
 
                 <div className="p-10">
-                    <h6 className="mb-2 block font-sans text-base font-normal  leading-relaxed tracking-normal  w-32 rounded-lg  antialiased">
-                        Name 
+                    <h6 className="mb-2 block font-sans text-base font-normal  leading-relaxed tracking-normal rounded-lg  antialiased">
+                       User Name: {username}
                     </h6>
                     <h4 className="mb-2 block font-sans text-base font-normal leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Job Title: 
+                        Job Title: {job_title}
                     </h4>
                     <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                        Job Posting Date
+                       Posting Date: {posting_date}
                     </p>
                     <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                        Application Deadline:
+                       Job Type: {job_type}
                     </p>
                     <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                       Salary Range:
+                         Deadline: {deadline}
                     </p>
                     <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                       Job Applicants Number:
+                       Salary Range: {salary_range}
+                    </p>
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                        Job Applicants Number: {applicants_number}
                     </p>
 
                     <div className="flex gap-6">
@@ -43,47 +50,7 @@ const SingleJobCategory = () => {
                     </div>
 
                 </div>
-            </div>         
-            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] mx-auto flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                <div className="relative m-0 w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
-                    <img
-                        src='https://i.ibb.co/cvVvTLS/kamrul1.jpg'
-                        className="h-full w-full object-cover"
-                    />
-                </div>
-
-                <div className="p-10">
-                    <h6 className="mb-2 block font-sans text-base font-normal  leading-relaxed tracking-normal  w-32 rounded-lg  antialiased">
-                        Name 
-                    </h6>
-                    <h4 className="mb-2 block font-sans text-base font-normal leading-snug tracking-normal text-blue-gray-900 antialiased">
-                        Job Title: 
-                    </h4>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                        Job Posting Date
-                    </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                        Application Deadline:
-                    </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                       Salary Range:
-                    </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
-                       Job Applicants Number:
-                    </p>
-
-                    <div className="flex gap-6">
-                        <Link to=''><button
-                            className="flex select-none  items-center gap-2 rounded-lg py-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white transition-all bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                            type="button"
-                        >
-                            View Details 
-
-                        </button></Link>
-                    </div>
-
-                </div>
-            </div>         
+            </div>                        
         </div>
     );
 };

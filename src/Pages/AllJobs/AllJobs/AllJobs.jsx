@@ -1,13 +1,36 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+// import { Link } from "react-router-dom";
+import AllSingleJobs from "../AllSinglaJobs/AllSingleJobs";
 
 
 const AllJobs = () => {
+
+
+    const [allJobs, setAllJobs] = useState([])
+
+    const [searchTerm, setSearchTerm] = useState("");
+
+    useEffect(() => {
+        fetch('http://localhost:5000/allJobs')
+            .then(res => res.json())
+            .then(data => setAllJobs(data))
+    }, [])
+
+    const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
+
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
             <h2 className="text-4xl text-center my-10">All Jobs Page</h2>
             <div className="form-control ">
                 <div className="input-group flex justify-center mx-auto mt-4">
-                    <input type="text" placeholder="Search here..." className="input input-bordered" />
+                    <input
+                        type="text"
+                        placeholder="Search here..."
+                        className="input input-bordered"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+
                     <button className="btn btn-square btn-secondary w-20">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
                     </button>
@@ -17,8 +40,8 @@ const AllJobs = () => {
                 <table className="table">
                     <thead>
                         <tr>
-                            <th>User Name</th>
                             <th>Job Title</th>
+                            <th>User Name</th>
                             <th>Job Posting Date</th>
                             <th>Application Deadline</th>
                             <th>Salary Range</th>
@@ -32,31 +55,13 @@ const AllJobs = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <h1>User Name</h1>
-                            </td>
-                            <td>
-                                <h1>Job Title</h1>
-                            </td>
-                            <td>
-                                <h1>Job Posting Date</h1>
-                            </td>
-                            <td>
-                                <h1>Application Deadline</h1>
-                            </td>
-                            <td>
-                                <h1>Salary Range</h1>
-                            </td>
-                            <th>
-                                <Link to='/singleJobDetails'> <button className="btn btn-secondary ">Details</button></Link>
-                            </th>
-                            <th>
-                                <button className="btn btn-group btn-secondary btn-outline">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                                </button>
-                            </th>
-                        </tr>
+                        {/* {
+                            allJobs.map(jobs => <AllSingleJobs
+                                key={jobs._id}
+                                jobs={jobs}
+                            ></AllSingleJobs>)
+                        } */}
+                        {filteredJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
                     </tbody>
                 </table>
             </div>
