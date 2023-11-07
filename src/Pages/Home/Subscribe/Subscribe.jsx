@@ -20,7 +20,7 @@ const Subscribe = () => {
                             placeholder="Enter your email"
                             className="p-6 bg-slate-50 rounded-l-lg"
                         />
-                        <button className="bg-secondary rounded-r-lg p-6 text-white">SUBSCRIBE</button>
+                        <button className="bg-secondary rounded-r-lg p-6 text-white">SUBSCRIBE ◀</button>
                     </form>
                 </div>
             </div>
