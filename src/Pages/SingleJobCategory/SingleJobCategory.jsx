@@ -8,8 +8,8 @@ const SingleJobCategory = ({jobData}) => {
 
     return (
         <div className="">
-            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] bg-white mx-auto md:flex-row flex-col rounded-xl md:h-[350px] bg-clip-border text-gray-700 shadow-md">
-                <div className="relative m-0 h-[160px] md:h-0 md:w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
+            <div className="mt-10 relative flex lg:w-full md:w-full lg:max-w-[48rem] max-w-[390px] md:max-w-[580px] bg-slate-500 text-white mx-auto md:flex-row flex-col rounded-xl md:h-[350px] bg-clip-border  shadow-md">
+                <div className="relative m-0 h-[160px] md:h-0 md:w-2/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border ">
                     <img
                         src={picture_URL || ''}
                         className="h-full w-full object-cover"
@@ -23,19 +23,19 @@ const SingleJobCategory = ({jobData}) => {
                     <h4 className="mb-2 block font-sans text-base font-normal leading-snug tracking-normal text-blue-gray-900 antialiased">
                         Job Title: {job_title}
                     </h4>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed  antialiased">
                        Posting Date: {posting_date}
                     </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed  antialiased">
                        Job Type: {job_type}
                     </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed  antialiased">
                          Deadline: {deadline}
                     </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed  antialiased">
                        Salary Range: {salary_range}
                     </p>
-                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
+                    <p className="mb-2 block font-sans text-base font-normal leading-relaxed  antialiased">
                         Job Applicants Number: {applicants_number}
                     </p>
 
