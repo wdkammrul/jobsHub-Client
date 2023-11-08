@@ -9,7 +9,7 @@ const JobCategory = () => {
     const [visibleJobs, setVisibleJobs] = useState(4);
 
     useEffect(() => {
-        fetch('http://localhost:5000/allJobs')
+        fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
             .then(res => res.json())
             .then(data => setJobCategoryData(data))
     }, [])
@@ -45,18 +45,18 @@ const JobCategory = () => {
             </TabPanel> */}
 
 
-             <TabPanel>
-                    <div className='grid md:grid-cols-2 p-5 gap-4 container mx-auto'>
-                        {jobCategoryData?.slice(0, visibleJobs).map(job => (
-                            <SingleJobCategory key={job._id} jobData={job}></SingleJobCategory>
-                        ))}
-                    </div>
-                    {visibleJobs < jobCategoryData?.length && (
-                        <button onClick={showMoreJobs} className="btn btn-secondary flex mx-auto w-48 mt-8 p-4">
-                            See More
-                        </button>
-                    )}
-                </TabPanel>
+            <TabPanel>
+                <div className='grid md:grid-cols-2 p-5 gap-4 container mx-auto'>
+                    {jobCategoryData?.slice(0, visibleJobs).map(job => (
+                        <SingleJobCategory key={job._id} jobData={job}></SingleJobCategory>
+                    ))}
+                </div>
+                {visibleJobs < jobCategoryData?.length && (
+                    <button onClick={showMoreJobs} className="btn btn-secondary flex mx-auto w-48 mt-8 p-4">
+                        See More
+                    </button>
+                )}
+            </TabPanel>
 
             <TabPanel>
                 <div className='grid md:grid-cols-2 p-5 gap-4 container mx-auto'>
@@ -87,7 +87,7 @@ const JobCategory = () => {
                 </div>
             </TabPanel>
         </Tabs>
-       
+
     );
 };
 

@@ -11,10 +11,12 @@ const AllJobs = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch('http://localhost:5000/allJobs')
+        fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
             .then(res => res.json())
             .then(data => setAllJobs(data))
     }, [])
+
+    console.log(allJobs)
 
     const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
 

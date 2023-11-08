@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllSingleJobs = ({ jobs }) => {
 
-    const { username, job_title, salary_range, deadline, posting_date } = jobs
+    const {_id, username, job_title, salary_range, deadline, posting_date } = jobs
     console.log(jobs)
 
     return (
@@ -24,7 +24,7 @@ const AllSingleJobs = ({ jobs }) => {
                 <h1>{salary_range}</h1>
             </td>
             <th>
-                <Link to='/singleJobDetails'> <button className="btn btn-secondary ">Details</button></Link>
+                <Link to={`/singleJobDetails/${jobs?._id}`}> <button className="btn btn-secondary ">Details</button></Link>
             </th>
             <th>
                 <button className="btn btn-group btn-secondary btn-outline">
