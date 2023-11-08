@@ -57,12 +57,7 @@ const AllJobs = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
-                            allJobs.map(jobs => <AllSingleJobs
-                                key={jobs._id}
-                                jobs={jobs}
-                            ></AllSingleJobs>)
-                        } */}
+                        
                         {filteredJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
                     </tbody>
                 </table>
