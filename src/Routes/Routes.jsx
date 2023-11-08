@@ -31,7 +31,7 @@ const router = createBrowserRouter([
                 element: <AllJobs></AllJobs>
             },
             {
-                path: '/singleJobDetails',
+                path: '//singleJobDetails/:id',
                 element: <SingleJobDetails></SingleJobDetails>
             },
             {
@@ -48,7 +48,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/singleJobCategory',
-                element:<SingleJobCategory></SingleJobCategory>
+                element: <SingleJobCategory></SingleJobCategory>
             },
             {
                 path: '/login',
