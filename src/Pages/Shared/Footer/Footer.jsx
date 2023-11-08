@@ -12,6 +12,7 @@ const Footer = () => {
                         <Link to="/" className="text-white normal-case text-3xl font-bold">JobsHub</Link>
                    </div>
 
+                    {/* <address></address> */}
                     <div className="flex flex-col text-xl font-bold"> 
                         <a className="link link-hover">82, Segunbagicha, Dhaka 1000</a>
                         <a className="link link-hover mt-4">Email: jobs@hub.com</a>

@@ -13,7 +13,7 @@ const Subscribe = () => {
                     </p>
                 </div>
 
-                {/* subscribe  */}
+               
                 <div className="md:w-1/2 text-center mt-10 md:mt-0">
                     <form action="" className="">
                         <input
