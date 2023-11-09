@@ -1,6 +1,11 @@
+import { Helmet } from "react-helmet-async";
+
 const Blogs = () => {
   return (
     <div>
+      <Helmet>
+        <title>JobsHub | Blogs</title>
+      </Helmet>
       <div className="bg-slate-700 rounded-lg p-16 mt-16 w-[400px] md:w-[740px] lg:w-full mx-auto">
         <h1 className="text-center text-3xl font-bold">
           Q: 01: What is an access token and refresh token? How do they work and where should we

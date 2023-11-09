@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet-async";
+
 const Update = () => {
     return (
         <div className="mt-24 rounded-lg w-11/12 md:w-11/12 lg:w-full mx-auto bg-slate-700 p-24">
@@ -6,6 +8,9 @@ const Update = () => {
 
             <form>
                 <div className="md:flex mb-6">
+                    <Helmet>
+                        <title>JobsHub | Update</title>
+                    </Helmet>
                     <div className="form-control md:w-1/2">
                         <label className="label">
                             <span className="label-text"></span>

@@ -2,13 +2,14 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
     const { registerUser } = useContext(AuthContext);
 
     const isStrongPassword = (password) => {
-        
+
         const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*(),.?":{}|<>]).{6,}$/;
 
         return strongPassword.test(password);
@@ -20,7 +21,8 @@ const Register = () => {
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        const values = { name, email, password }
+        const photo = form.photo.value;
+        const values = { name, email, password, photo }
         console.log(values);
 
 
@@ -34,7 +36,7 @@ const Register = () => {
             .catch(err => toast('Try Again Please', err))
 
 
-        fetch('https://beverage-server-site.vercel.app/users', {
+        fetch('https://b8a11-server-side-wdkammrul.vercel.app/apply', {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -53,6 +55,9 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>JobsHub | Register</title>
+            </Helmet>
             <form onSubmit={handleRegisterBtn} className="w-11/12 md:w-3/4 lg:w-1/2 mx-auto bg-slate-800 rounded-lg p-10 mt-10">
                 <div className="form-control">
                     <h2 className="text-4xl text-center my-6 uppercase font-extrabold">Register Here</h2>
@@ -72,7 +77,12 @@ const Register = () => {
                         <span className="label-text text-xl font-extrabold"></span>
                     </label>
                     <input type="password" placeholder="Password" name="password" className="input rounded-full input-bordered" required />
-
+                </div>
+                <div className="form-control">
+                    <label className="label mt-3">
+                        <span className="label-text text-xl font-extrabold"></span>
+                    </label>
+                    <input type="text" placeholder="Photo URL" name="photo" className="input rounded-full input-bordered" required />
                 </div>
                 <div className="form-control mt-6 ">
                     <button className="btn btn-secondary rounded-full mt-3 mx-auto w-[220px] text-white">Register</button>

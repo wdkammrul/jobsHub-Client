@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -32,7 +33,9 @@ const Login = () => {
 
     return (
         <div>
-
+            <Helmet>
+                <title>JobsHub | Login</title>
+            </Helmet>
             <form onSubmit={handleLogin} className="w-11/12 md:w-3/4 lg:w-1/2 mx-auto bg-slate-800 rounded-lg p-10 mt-10">
                 <div className="form-control">
                     <h2 className="text-4xl text-center my-6 uppercase font-extrabold">Log in</h2>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
 
 const AddAJob = () => {
@@ -14,12 +15,12 @@ const AddAJob = () => {
         const description = form.description.value;
         const picture = form.picture.value;
         const logo = form.logo.value;
-        
-
-        const addJob = {username, category, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange} 
 
 
-        fetch("http://localhost:5000/allJobs", {
+        const addJob = { username, category, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange }
+
+
+        fetch("https://b8a11-server-side-wdkammrul.vercel.app/allJobs", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -42,6 +43,9 @@ const AddAJob = () => {
     return (
         <div className="mt-24 rounded-lg w-11/12 md:w-11/12 lg:w-full mx-auto bg-slate-700 p-24">
 
+            <Helmet>
+                <title>JobsHub | AddAJob</title>
+            </Helmet>
             <h2 className="text-5xl font-extrabold text-center mb-6">Add A Job</h2>
 
             <form onSubmit={handleADD}>
@@ -152,7 +156,7 @@ const AddAJob = () => {
                 </div>
 
                 {/* <button className="btn btn-block btn-secondary" type="submit" value="Add A Job" /> */}
-                <button className="btn btn-block btn-secondary"  type="submit">Add A Job</button>
+                <button className="btn btn-block btn-secondary" type="submit">Add A Job</button>
 
 
             </form>

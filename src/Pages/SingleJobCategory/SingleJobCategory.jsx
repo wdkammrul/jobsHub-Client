@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const SingleJobCategory = ({jobData}) => {
 
-    const { picture_URL, username, job_title, salary_range, deadline, posting_date, applicants_number, job_type } = jobData
+    const {_id, picture_URL, username, job_title, salary_range, deadline, posting_date, applicants_number, job_type } = jobData
 
     return (
         <div className="">
@@ -40,7 +40,7 @@ const SingleJobCategory = ({jobData}) => {
                     </p>
 
                     <div className="flex gap-">
-                        <Link to=''><button
+                        <Link to={`/singleJobDetails/${_id}`}><button
                             className="flex select-none  items-center gap-2 rounded-lg py-4 mt-3 px-6 text-center align-middle font-sans text-xs font-bold  text-white transition-all bg-secondary disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             type="button"
                         >

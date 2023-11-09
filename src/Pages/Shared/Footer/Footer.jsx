@@ -25,7 +25,7 @@ const Footer = () => {
                     {/* <header></header> */}
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/allJobs'>All Jobs</NavLink> 
-                    <NavLink to='/allJobs'>Add A Job</NavLink> 
+                    <NavLink to='/addAJob'>Add A Job</NavLink> 
                     <NavLink to='/myJobs'>My Jobs</NavLink>
                 </nav>
 

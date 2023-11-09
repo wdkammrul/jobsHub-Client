@@ -1,26 +1,36 @@
 import { useEffect, useState } from "react";
 // import { Link } from "react-router-dom";
 import AllSingleJobs from "../AllSinglaJobs/AllSingleJobs";
+import { Helmet } from "react-helmet-async";
 
 
 const AllJobs = () => {
 
 
+    const [filteredJobs, setFilteredJobs] = useState([])
+    console.log(filteredJobs)
     const [allJobs, setAllJobs] = useState([])
 
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        // fetch('http://localhost:5000/allJobs')
-        fetch('http://localhost:5000/allJobs').then(res => res.json())
+        // fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
+        fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs').then(res => res.json())
             .then(data => setAllJobs(data))
+
+
     }, [])
 
+    useEffect(() => {
+        setFilteredJobs(allJobs?.filter(job => job?.job_title?.toLowerCase()?.includes(searchTerm?.toLowerCase())))
+    }, [allJobs, searchTerm])
 
-    // const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
+            <Helmet>
+                <title>JobsHub | AllJobs</title>
+            </Helmet>
             <h2 className="text-4xl text-center my-10">All Jobs Page</h2>
             <div className="form-control ">
                 <div className="input-group flex justify-center mx-auto mt-4">

@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../AuthenticationPage/AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet-async";
 
 
 /* eslint-disable react/prop-types */
@@ -14,27 +15,27 @@ const SingleJobDetails = () => {
 
     console.log(theData)
     useEffect(() => {
-        fetch('http://localhost:5000/allJobs')
+        fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
             .then(res => res.json())
             .then(data => {
                 const singledata = data?.find(data => data._id === id)
                 setData(singledata)
             })
-    }, [id]) 
+    }, [id])
 
 
-    const handleApplySubmit = e =>{
+    const handleApplySubmit = e => {
         e.preventDefault()
-        const form = e.target 
+        const form = e.target
         const resume = form.resume.value
         const email = user?.email
         const userName = user?.displayName
         const data = theData
-       
-        const applicationData = {resume, email, data, userName}
+
+        const applicationData = { resume, email, data, userName }
         console.log(applicationData)
 
-        fetch("http://localhost:5000/apply", {
+        fetch("https://b8a11-server-side-wdkammrul.vercel.app/apply", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
@@ -52,9 +53,29 @@ const SingleJobDetails = () => {
     }
 
 
+    const isJobExpired = () => {
+        if (theData && theData.expiresOn) {
+            const jobExpirationDate = new Date(theData.expiresOn);
+            const currentDate = new Date();
+            return jobExpirationDate < currentDate;
+        }
+        return false; // If jobData or expiresOn is not available, consider the job as not expired
+    };
+
+    const handleApplyClick = () => {
+        if (isJobExpired()) {
+            toast.error("This job posting has expired.");
+        } else {
+            document.getElementById("my_modal_5").showModal();
+        }
+    };
+
 
     return (
         <div className=" mt-10  w-[400px] md:w-[740px] lg:w-full mx-auto">
+            <Helmet>
+                <title>JobsHub | singleJobDetails</title>
+            </Helmet>
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img
                     className="w-full h-48 md:h-96 object-cover object-center"
@@ -75,7 +96,7 @@ const SingleJobDetails = () => {
                     </div>
 
                     <div className="mt-10 mb-6">
-                        <button className="btn btn-secondary w-full" onClick={() => document.getElementById('my_modal_5').showModal()}> Apply </button>
+                        <button className="btn btn-secondary w-full" onClick={handleApplyClick}> Apply </button>
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box  w-[400px] md:w-[740px] lg:w-full mx-auto">
                                 <form onSubmit={handleApplySubmit}>
@@ -90,7 +111,7 @@ const SingleJobDetails = () => {
                                         <label className="label">
                                             <span className="label-text text-xl font-extrabold"></span>
                                         </label>
-                                        <input type="email" readOnly defaultValue={user?.email}  name="email" placeholder="Email" className="input input-bordered" />
+                                        <input type="email" readOnly defaultValue={user?.email} name="email" placeholder="Email" className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
