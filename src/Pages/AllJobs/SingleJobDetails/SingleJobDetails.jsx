@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { AuthContext } from "../../../AuthenticationPage/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 
 /* eslint-disable react/prop-types */
@@ -19,7 +20,38 @@ const SingleJobDetails = () => {
                 const singledata = data?.find(data => data._id === id)
                 setData(singledata)
             })
-    }, [])
+    }, [id]) 
+
+
+    const handleApplySubmit = e =>{
+        e.preventDefault()
+        const form = e.target 
+        const resume = form.resume.value
+        const email = user?.email
+        const userName = user?.displayName
+        const data = theData
+       
+        const applicationData = {resume, email, data, userName}
+        console.log(applicationData)
+
+        fetch("http://localhost:5000/apply", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(applicationData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                // console.log(data);
+                if (data.insertedId) {
+                    toast('Apply Added Successfully')
+                    form.reset();
+                }
+            });
+    }
+
+
 
     return (
         <div className=" mt-10  w-[400px] md:w-[740px] lg:w-full mx-auto">
@@ -46,28 +78,28 @@ const SingleJobDetails = () => {
                         <button className="btn btn-secondary w-full" onClick={() => document.getElementById('my_modal_5').showModal()}> Apply </button>
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box  w-[400px] md:w-[740px] lg:w-full mx-auto">
-                                <form>
+                                <form onSubmit={handleApplySubmit}>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-xl font-extrabold"></span>
                                         </label>
-                                        <input type="text" readOnly defaultValue={theData?.username} name="name" placeholder="User Name" className="input input-bordered" />
+                                        <input type="text" readOnly defaultValue={user?.displayName} name="name" placeholder="User Name" className="input input-bordered" />
                                     </div>
 
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-xl font-extrabold"></span>
                                         </label>
-                                        <input type="email" readOnly defaultValue={theData?.email}  name="email" placeholder="Email" className="input input-bordered" />
+                                        <input type="email" readOnly defaultValue={user?.email}  name="email" placeholder="Email" className="input input-bordered" />
                                     </div>
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-xl font-extrabold"></span>
                                         </label>
-                                        <input type="text" defaultValue={theData?.username} name="link" placeholder="Submit Resume Link" className="input input-bordered" />
+                                        <input type="text" name="resume" placeholder="Submit Resume Link" className="input input-bordered" />
                                     </div>
                                     <div className="form-control mt-6 ">
-                                        <button className="btn btn-secondary text-white">Submit</button>
+                                        <button className="btn btn-secondary text-white" type="submit">Submit</button>
                                     </div>
                                 </form>
 

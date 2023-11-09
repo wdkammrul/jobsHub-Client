@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const AllSingleJobs = ({ jobs }) => {
 
     const {_id, username, job_title, salary_range, deadline, posting_date } = jobs
-    console.log(jobs)
+    // console.log(jobs)
 
     return (
         <tr>

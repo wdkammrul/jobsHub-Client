@@ -11,14 +11,13 @@ const AllJobs = () => {
     const [searchTerm, setSearchTerm] = useState("");
 
     useEffect(() => {
-        fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
-            .then(res => res.json())
+        // fetch('http://localhost:5000/allJobs')
+        fetch('http://localhost:5000/allJobs').then(res => res.json())
             .then(data => setAllJobs(data))
     }, [])
 
-    console.log(allJobs)
 
-    const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
+    // const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
 
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
@@ -57,8 +56,8 @@ const AllJobs = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        
-                        {filteredJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
+
+                        {allJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
                     </tbody>
                 </table>
             </div>
