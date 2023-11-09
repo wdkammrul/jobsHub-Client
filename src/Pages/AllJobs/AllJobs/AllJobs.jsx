@@ -8,8 +8,9 @@ const AllJobs = () => {
 
 
     const [filteredJobs, setFilteredJobs] = useState([])
-    console.log(filteredJobs)
+    // console.log(filteredJobs)
     const [allJobs, setAllJobs] = useState([])
+    console.log(allJobs)
 
     const [searchTerm, setSearchTerm] = useState("");
 
@@ -22,9 +23,11 @@ const AllJobs = () => {
     }, [])
 
     useEffect(() => {
-        setFilteredJobs(allJobs?.filter(job => job?.job_title?.toLowerCase()?.includes(searchTerm?.toLowerCase())))
+        setFilteredJobs(allJobs?.filter(job => job?.jobTitle?.toLowerCase()?.includes(searchTerm?.toLowerCase())))
     }, [allJobs, searchTerm])
 
+
+    // username, category, deadline, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange, email
 
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
@@ -67,7 +70,7 @@ const AllJobs = () => {
                     </thead>
                     <tbody>
 
-                        {allJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
+                        {filteredJobs.map(jobs => <AllSingleJobs key={jobs._id} jobs={jobs} />)}
                     </tbody>
                 </table>
             </div>

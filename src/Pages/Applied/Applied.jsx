@@ -1,45 +1,29 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-
-// import { Link } from "react-router-dom";
-// import AllSingleJobs from "../AllSinglaJobs/AllSingleJobs";
-import { useContext, useEffect, useState } from "react";
-
-import { Helmet } from "react-helmet-async";
-import { AuthContext } from "../../AuthenticationPage/AuthProvider/AuthProvider";
+import { useContext, useEffect, useState } from "react"
+import { AuthContext } from "../../AuthenticationPage/AuthProvider/AuthProvider"
+import axios from "axios"
+import { Helmet } from "react-helmet-async"
 import MySingleJob from "../MySingleJob/MySingleJob";
 
+const Applied = () => {
 
-const myJobs = () => {
+    const [appliedData, setAppliedData] = useState(null)
 
-
+    console.log(appliedData?.email)
     const { user } = useContext(AuthContext)
 
-    // const [allJobs, setAllJobs] = useState([])
-    const [myUploadedJobs, setMyJobs] = useState([])
-
-
-    // const [searchTerm, setSearchTerm] = useState("");
-
-    // useEffect(() => {
-    //     // fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs')
-    //     fetch('https://b8a11-server-side-wdkammrul.vercel.app/allJobs').then(res => res.json())
-    //         .then(data => setAllJobs(data))
-    // }, [])
-
+    // console.log(user?.email);
     useEffect(() => {
-        fetch(`https://b8a11-server-side-wdkammrul.vercel.app/allJobs/${user?.email}`)
-            .then(res => res.json())
-            .then(data => setMyJobs(data))
+        axios.get(`https://b8a11-server-side-wdkammrul.vercel.app/apply?email=${user?.email}`)
+            .then(data => setAppliedData(data.data))
 
     }, [user?.email])
 
 
-    // const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
-
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
             <Helmet>
-                <title>JobsHub | My Jobs</title>
+                <title>JobsHub | Applied Jobs</title>
             </Helmet>
             <div className="form-control ">
                 <div className="input-group flex justify-center mx-auto mt-4">
@@ -76,7 +60,7 @@ const myJobs = () => {
                     </thead>
                     <tbody>
 
-                        {myUploadedJobs?.map(jobs => <MySingleJob key={jobs._id} jobs={jobs} />)}
+                        {appliedData?.map(jobs => <MySingleJob key={jobs._id} jobs={jobs} />)}
                     </tbody>
                 </table>
             </div>
@@ -84,4 +68,4 @@ const myJobs = () => {
     );
 };
 
-export default myJobs;
+export default Applied;

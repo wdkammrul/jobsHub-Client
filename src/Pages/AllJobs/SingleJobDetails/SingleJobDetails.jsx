@@ -79,21 +79,26 @@ const SingleJobDetails = () => {
             <div className="bg-white rounded-lg overflow-hidden shadow-md">
                 <img
                     className="w-full h-48 md:h-96 object-cover object-center"
-                    src={theData?.picture_url}
+                    src={theData?.picture}
                     alt="Job Preview"
                 />
+
+
+
                 <div className="p-6">
                     <div className="flex items-center mb-4 mt-4">
-                        <img className="rounded-full w-16 h-16 mr-4" src="https://i.ibb.co/zxLDc0T/images.png" alt="Company Logo" />
+                        <img className="rounded-full w-16 h-16 mr-4" src={theData?.logo} alt="Company Logo" />
                         <div>
                             <h1 className="text-3xl font-bold">{theData?.username}</h1>
                         </div>
                     </div>
                     <p className="text-gray-700 my-6 text-xl font-bold">Description: {theData?.description}</p>
                     <div className="md:flex lg:justify-between md:max-w-4xl my-8">
-                        <p className="text-gray-700 text-2xl font-bold">Salary Range:{theData?.salary_range}</p>
-                        <p className="text-gray-700 text-2xl font-bold mt-3">Number of Applicants:{theData?.applicants_number}</p>
+                        <p className="text-gray-700 text-2xl font-bold">Salary Range: {theData?.salaryRange}</p>
+                        <p className="text-gray-700 text-2xl font-bold mt-3">Number of Applicants: {theData?.jobApplicatsNumber}</p>
                     </div>
+
+                   
 
                     <div className="mt-10 mb-6">
                         <button className="btn btn-secondary w-full" onClick={handleApplyClick}> Apply </button>

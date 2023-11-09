@@ -1,7 +1,14 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { toast } from "react-toastify";
+import { AuthContext } from "../../AuthenticationPage/AuthProvider/AuthProvider";
+
 
 const AddAJob = () => {
+
+    const { user } = useContext(AuthContext)
+    console.log(user?.email)
+
 
     const handleADD = e => {
         e.preventDefault()
@@ -15,9 +22,11 @@ const AddAJob = () => {
         const description = form.description.value;
         const picture = form.picture.value;
         const logo = form.logo.value;
+        const deadline = form.applicationDeadline.value;
+        const email = user?.email
 
 
-        const addJob = { username, category, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange }
+        const addJob = { username, category, deadline, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange, email }
 
 
         fetch("https://b8a11-server-side-wdkammrul.vercel.app/allJobs", {

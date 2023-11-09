@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 
-const AllSingleJobs = ({ jobs }) => {
+const MySingleJob = ({ jobs }) => {
 
-    const {_id, username, category, deadline, jobApplicatsNumber, jobTitle, description, jobPostingDate, picture, logo, salaryRange, email } = jobs
+    const { _id, username, deadline,  jobTitle,  jobPostingDate, salaryRange } = jobs
     // console.log(jobs)
 
     return (
@@ -24,7 +24,7 @@ const AllSingleJobs = ({ jobs }) => {
                 <h1>{salaryRange}</h1>
             </td>
             <th>
-                <Link to={`/singleJobDetails/${_id}`}> <button className="btn btn-secondary ">Details</button></Link>
+                <Link to={`/update/${_id}`}> <button className="btn btn-secondary ">Update</button></Link>
             </th>
             <th>
                 <button className="btn btn-group btn-secondary btn-outline">
@@ -36,4 +36,4 @@ const AllSingleJobs = ({ jobs }) => {
 };
 
 
-export default AllSingleJobs;
+export default MySingleJob;

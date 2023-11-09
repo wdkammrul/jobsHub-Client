@@ -11,6 +11,8 @@ import AddAJob from "../Pages/AddAJob/AddAJob";
 import MyJobs from "../Pages/MyJobs/MyJobs";
 import SingleJobCategory from "../Pages/SingleJobCategory/SingleJobCategory";
 import Update from "../Pages/Update/Update";
+import PrivateRoute from "../AuthenticationPage/PrivateRoute/PrivateRoute";
+import Applied from "../Pages/Applied/Applied";
 
 const router = createBrowserRouter([
     {
@@ -31,24 +33,28 @@ const router = createBrowserRouter([
                 element: <AllJobs></AllJobs>
             },
             {
-                path: '//singleJobDetails/:id',
-                element: <SingleJobDetails></SingleJobDetails>
+                path: '/singleJobDetails/:id',
+                element: <PrivateRoute><SingleJobDetails></SingleJobDetails></PrivateRoute>
             },
             {
                 path: '/addAJob',
-                element: <AddAJob></AddAJob>
+                element: <PrivateRoute><AddAJob></AddAJob></PrivateRoute>
             },
             {
                 path: '/myJobs',
-                element: <MyJobs></MyJobs>
+                element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>
             },
             {
-                path: '/update',
-                element: <Update></Update>
+                path: '/update/:id',
+                element: <PrivateRoute><Update></Update></PrivateRoute>
             },
             {
                 path: '/singleJobCategory',
-                element: <SingleJobCategory></SingleJobCategory>
+                element: <PrivateRoute><SingleJobCategory></SingleJobCategory></PrivateRoute>
+            },
+            {
+                path: '/applied',
+                element: <PrivateRoute><Applied></Applied></PrivateRoute>
             },
             {
                 path: '/login',
