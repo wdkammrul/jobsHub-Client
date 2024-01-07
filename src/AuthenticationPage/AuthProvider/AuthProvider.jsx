@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import auth from "../firebase.config";
 
 
@@ -42,8 +42,8 @@ const AuthProvider = ({ children }) => {
 
     const signInUsingPopup = () => {
         return signInWithPopup(auth, googleAuth)
-            .then(res => toast('Successful Sign In', res))
-            .catch(err => toast('Try Again Please', err))
+            .then(res => console.log('Successful Sign In', res))
+            .catch(err => console.log('Try Again Please', err))
     }
 
 

@@ -3,6 +3,7 @@ import Banner from "../Banner/Banner";
 import ContactUs from "../ContactUs/ContactUs";
 import JobCategory from "../JobCategory/JobCategory";
 import Subscribe from "../Subscribe/Subscribe";
+import NewJobs from "../NewJobs/NewJobs";
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             </Helmet>
            <Banner></Banner>
            <JobCategory></JobCategory>
+           <NewJobs></NewJobs>
            <Subscribe></Subscribe>
            <ContactUs></ContactUs>
         </div>

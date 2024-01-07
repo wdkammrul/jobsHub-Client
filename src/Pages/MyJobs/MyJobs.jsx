@@ -36,6 +36,8 @@ const myJobs = () => {
 
     // const filteredJobs = allJobs.filter(job => job.job_title.toLowerCase().includes(searchTerm.toLowerCase()));
 
+   
+
     return (
         <div className="w-[400px] md:w-[740px] lg:w-full mx-auto rounded-lg">
             <Helmet>

@@ -1,6 +1,15 @@
-JobsHub 
+# JobsHub 
 
 ➤ Click here to view the TechZoo website: https://jobshub-1fbad.web.app/
+
+## Technologies
+The project is built with the following technologies:
+
+- React.js
+- Tailwind
+- Firebase
+
+
 
 ⚪ Unique Design: Crafted a visually appealing and unique design for the full-stack Job Seeking website, avoiding any similarities with previous projects or common layouts.
 

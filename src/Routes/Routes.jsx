@@ -13,6 +13,7 @@ import SingleJobCategory from "../Pages/SingleJobCategory/SingleJobCategory";
 import Update from "../Pages/Update/Update";
 import PrivateRoute from "../AuthenticationPage/PrivateRoute/PrivateRoute";
 import Applied from "../Pages/Applied/Applied";
+import NewJobs from "../Pages/Home/NewJobs/NewJobs";
 
 const router = createBrowserRouter([
     {
@@ -59,6 +60,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/newJobs',
+                element: <NewJobs></NewJobs>
             },
             {
                 path: '/register',
